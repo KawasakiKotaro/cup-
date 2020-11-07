@@ -5,26 +5,33 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </head>
 
   <body>
-    <header>
-      <div>
-        <h1>
+    <header  class="header">
+      <div class="header_logo" >
+        <h1><a>CUP</a>         
           <% if user_signed_in? %>
-            <div>
+            <div class="header_manu">
+              <ul class="main-manu">
               <%= link_to "マイページ","/users/#{current_user.id}" %>
               <%= link_to "ログアウトする", destroy_user_session_path, method: :delete %>
               <%= link_to "投稿する", "/tweets/new" %>
+             </ul>
             </div>
           <% else %>
-            <div>
+            <div class="header_manu">
+             <ul class="main-manu">
+          
               <%= link_to "ログイン", new_user_session_path %>
               <%= link_to "新規登録", new_user_registration_path %>
+            
+             </ul>
             </div>
           <% end %>
+          </h1>
       </div>
     </header>
 
