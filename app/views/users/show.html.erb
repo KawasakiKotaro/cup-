@@ -1,0 +1,8 @@
+<div>
+    <p>あなたの投稿一覧</p>
+    <% @tweets.each do |tweets| %>
+        <div>
+            <%= simple_format(tweets.text) %>
+        </div>
+    <% end %>
+</div>
