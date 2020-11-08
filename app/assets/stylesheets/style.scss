@@ -13,14 +13,59 @@ header.header{
 }
 .main-manu{
     display: inline-left;
-   
-        a{
+       a{
           color: green;
           border-style: solid;
           border-color: green;
           margin-left: 10px;
-          background-color:white;
+          background-color: white;
         }
 }
 
+.content{
+    border-style: solid;
+    border-color: green;
+    div.content_area{
+        box-shadow: 0 10px 25px 0 gray;
+        margin: 25px;
+         p{    
+             background-color: white;
+         }
+    }
+    div.content_change{
+        list-style: none;
+        display: inline-left;
+            a{
+              color: green;
+              
+              margin-left: 10px;
+              background-color: orange;
+            }
+    }
+}
+
+
+
+.btn{
+    background-color: orange;
+    color: green;
+}
+
+.content_change_edit{
+    display: flex;
+    list-style: none;
+    font-size: 25px;
+            a{
+            color: green;
+            margin-left: 10px;
+            background-color: orange;
+            }
+}
+
+.btn_show{
+    background-color: orange;
+    a{
+        color: green;
+    }
+}
 

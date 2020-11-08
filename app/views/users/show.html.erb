@@ -1,8 +1,11 @@
-<div>
+<div class="content">
     <p>あなたの投稿一覧</p>
     <% @tweets.each do |tweets| %>
-        <div>
+        <div class="content_area">
             <%= simple_format(tweets.text) %>
         </div>
     <% end %>
+    <div class="btn_show">
+        <%= link_to 'ホームへ戻る',"/tweets",method: :get %>
+    </div>
 </div>

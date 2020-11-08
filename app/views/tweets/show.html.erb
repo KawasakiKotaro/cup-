@@ -1,5 +1,5 @@
-<div>
-    <div>
+<div class="content">
+    <div class="content_change_edit">
         <% if user_signed_in? && current_user.id == @tweet.user_id %>
         <li>
           <%= link_to '編集', "/tweets/#{@tweet.id}/edit",method: :get %>
@@ -9,5 +9,10 @@
         </li>
     </div>
         <% end %>
+        <div class="content_area">
         <%= simple_format(@tweet.text) %>
+        </div>
+    <div class="btn_show">
+        <%= link_to 'ホームへ戻る',"/tweets",method: :get %>
+    </div>
 </div>

@@ -1,19 +1,19 @@
-<div>
+<div class="content">
     <% @tweets.each do |tweet| %>
+    <div class="content_post">
+     <div class="content_area">
      <p> <%= tweet.text %> </p>
-     
-     <li>
-     <%= link_to '閲覧', "/tweets/#{tweet.id}", method: :get %>
-     
-     <% if user_signed_in? && current_user.id == tweet.user.id %>
-      
-     <%= link_to '編集', "/tweets/#{tweet.id}/edit", method: :get %>
-     <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
-     </li>
-     
-     
+     <div class="content_change">
+      <li>
+          <%= link_to '閲覧', "/tweets/#{tweet.id}", method: :get %>
+          <% if user_signed_in? && current_user.id == tweet.user.id %>
+          <%= link_to '編集', "/tweets/#{tweet.id}/edit", method: :get %>
+          <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
+      </li>
+          <% end %>
+     </div>
+    </div>
     <% end %>
-
-    <% end %>
+  </div>
     <%= paginate(@tweets) %>
 </div>
